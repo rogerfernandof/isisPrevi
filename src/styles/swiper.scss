@@ -1,0 +1,44 @@
+
+.swiper-button-next {
+  right: 45px;
+}
+
+.swiper-button-prev {
+  left: 45px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: white;
+}
+
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: white;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: black;
+}
+
+@media (max-width: 30em) {
+  .swiper-button-next {
+    right: 14px;
+  }
+
+  .swiper-button-prev {
+    left: 14px;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 2.3rem;
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+}
