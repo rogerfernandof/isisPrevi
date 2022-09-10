@@ -68,17 +68,6 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleParseTwo = () => {
-    const message = this.createChatBotMessage(
-      "Parse two",
-      {
-        widget: "javascriptQuiz",
-      }
-    );
-
-    this.addMessageToState(message);
-  };
-
   addMessageToState = (message) => {
     if (message !== '') {
       this.setState((prevState) => ({

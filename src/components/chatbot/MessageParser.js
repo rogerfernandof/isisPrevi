@@ -39,19 +39,6 @@ class MessageParser {
         data.cidade = { message }.message
         this.actionProvider.ifCidade()
       }
-
-      if (
-        lowercase.includes('javascript') ||
-        lowercase.includes('js')
-      ) {
-        this.actionProvider.handleJavascriptQuiz()
-      }
-      if (
-        lowercase.includes('test') ||
-        lowercase.includes('js')
-      ) {
-        this.actionProvider.handleParseTwo()
-      }
     } else {
       alert('Digite uma mensagem correta')
     }
