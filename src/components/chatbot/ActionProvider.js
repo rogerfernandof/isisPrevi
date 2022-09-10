@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com'
 function sendEmail() {
 
   (function() {
-    emailjs.init("3b8MngKexyzcdbXMa"); //please encrypted user id for malicious attacks
+    emailjs.init("MKn4YFk2qO1exD-lT"); //please encrypted user id for malicious attacks
   })();
   console.log(data);
   const params = {
@@ -13,7 +13,7 @@ function sendEmail() {
     LeadWhatsApp: data.whatsApp,
     LeadCity: data.cidade,
   }
-  emailjs.send('service_6oshw0d', 'template_as46y9h', params).then(function (res) {/*alert('Success! ' + res.status)*/})
+  emailjs.send('service_4kfvh8w', 'template_5a690lk', params).then(function (res) {/*alert('Success! ' + res.status)*/})
 }
 
 class ActionProvider {
