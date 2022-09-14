@@ -8,12 +8,12 @@ export const QuestionList = [
     errorMessage: 'Não podemos dar andamento a sua solicitação pois esse benefício é requerido juntamente ao INSS (Previdência Social) e a mãe precisa ter contribuído ou trabalhado de carteira assinada antes de ter a criança!'
   },
   {
-    question:  'Quando a criança nasceu você estava desempregada?',
+    question:  'Você já recebeu a Licença Maternidade para esse filho? (Salário que você recebe quando está empregada durante o nascimento do bebê)',
     answersList: [
-      { answer: 'SIM', isCorrect: true, color: '#018204' },
+      { answer: 'SIM', isCorrect: false, color: '#018204' },
       { answer: 'NÃO', isCorrect: true, color: '#a60101' },
     ],
-    errorMessage: 'Seu cadastro foi negado na análise pois só tem direito a esse benefício, as mães que ganharam o bebê desempregada pois quem ganhou trabalhando já tirou licença maternidade pela empresa!'
+    errorMessage: 'Você não tem direito ao Salário Maternidade do INSS, pois já recebeu a Licença Maternidade. Caso tenha outro filho o qual você não recebeu a Licença Maternidade, reinicie o teste. '
   },
   {
     question:  'A criança já completou 5 anos?',
