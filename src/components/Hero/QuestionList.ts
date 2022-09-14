@@ -13,7 +13,7 @@ export const QuestionList = [
       { answer: 'SIM', isCorrect: false, color: '#018204' },
       { answer: 'NÃO', isCorrect: true, color: '#a60101' },
     ],
-    errorMessage: 'Você não tem direito ao Salário Maternidade do INSS, pois já recebeu a Licença Maternidade. Caso tenha outro filho o qual você não recebeu a Licença Maternidade, reinicie o teste. '
+    errorMessage: 'Você não tem direito ao Salário Maternidade do INSS, pois já recebeu a Licença Maternidade. Caso tenha outro filho(a) o qual você não recebeu a Licença Maternidade, reinicie o teste. '
   },
   {
     question:  'A criança já completou 5 anos?',
