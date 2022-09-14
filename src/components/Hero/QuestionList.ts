@@ -8,7 +8,7 @@ export const QuestionList = [
     errorMessage: 'Não podemos dar andamento a sua solicitação pois esse benefício é requerido juntamente ao INSS (Previdência Social) e a mãe precisa ter contribuído ou trabalhado de carteira assinada antes de ter a criança!'
   },
   {
-    question:  'Você já recebeu a Licença Maternidade para esse filho? (Salário que você recebe quando está empregada durante o nascimento do bebê)',
+    question:  'Você já recebeu a Licença Maternidade para este bebê? (Salário que você recebe quando está empregada durante o nascimento do bebê)',
     answersList: [
       { answer: 'SIM', isCorrect: false, color: '#018204' },
       { answer: 'NÃO', isCorrect: true, color: '#a60101' },
