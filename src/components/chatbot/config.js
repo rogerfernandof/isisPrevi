@@ -6,8 +6,7 @@ const botName = 'Sarah'
 const config = {
   botName: botName,
   initialMessages: [
-    createChatBotMessage(`Olá, meu nome é Sarah, sou consultora virtual da Isis Previ e estou aqui para ajudar a preencher o seu cadastro.`),
-    createChatBotMessage(`Em menos de 2 minutos já vamos iniciar o processo do seu Salário Maternidade. Então, vamos começar!`, {
+    createChatBotMessage(`Olá, meu nome é Sarah, sou consultora virtual da Isis Previ.Se você chegou até aqui, você pode receber o Salário Maternidade!`, {
       delay: 800,
     }),
     createChatBotMessage(`Qual o seu nome completo?`, {
