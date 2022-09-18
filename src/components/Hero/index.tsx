@@ -70,8 +70,8 @@ export function Hero() {
             fontWeight="bold"
             lineHeight="3rem"
           >
-            Descubra aqui se você pode solicitar o Salário
-            Maternidade
+            Faça aqui o CADASTRO GRATUITO para receber até R$7900,00 com o Auxílio Maternidade
+            Processo rápido e sem burocracias
           </Text>
           {isDisplayed ? (
             <>
