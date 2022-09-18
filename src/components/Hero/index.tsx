@@ -70,8 +70,7 @@ export function Hero() {
             fontWeight="bold"
             lineHeight="3rem"
           >
-            Faça aqui o CADASTRO GRATUITO para receber até R$7900,00 com o Auxílio Maternidade
-            Processo rápido e sem burocracias
+            Faça aqui o CADASTRO GRATUITO sem precisar sair de casa e receba até R$7900,00
           </Text>
           {isDisplayed ? (
             <>
