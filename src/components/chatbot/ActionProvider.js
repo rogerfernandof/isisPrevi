@@ -43,7 +43,7 @@ class ActionProvider {
   };
 
   ifCidade = () => {
-    const message = this.createChatBotMessage(`Digite a data de nascimento do seu bebê:`, {
+    const message = this.createChatBotMessage(`Qual a data de nascimento do seu bebê:`, {
       payload: 'nascimento'
     })
     this.addMessageToState(message);
