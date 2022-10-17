@@ -44,7 +44,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'nascimento'
       ) {
-        data.cidade = { message }.message
+        data.nascimento = { message }.message
         this.actionProvider.ifNascimento()
       }
     } else {
