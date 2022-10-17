@@ -47,6 +47,14 @@ class MessageParser {
         data.nascimento = { message }.message
         this.actionProvider.ifNascimento()
       }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'saida'
+      ) {
+        data.nascimento = { message }.message
+        this.actionProvider.ifSaida()
+      }
     } else {
       alert('Digite uma mensagem correta')
     }
