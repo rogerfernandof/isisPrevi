@@ -51,7 +51,7 @@ class ActionProvider {
   };
 
   ifNascimento = () => {
-    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último emprego:`, {
+    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último trabalho ou da sua última contribuição:`, {
       payload: 'saida'
     })
     this.addMessageToState(message);
