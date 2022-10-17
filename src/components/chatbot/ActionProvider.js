@@ -50,11 +50,11 @@ class ActionProvider {
 
   ifNascimento = () => {
     const message = this.createChatBotMessage(`Muito obrigada pelas informações, já consultei aqui no sistema, e está tudo certo.`, {
-      payload: 'cidade'
+      payload: 'nascimento'
     })
     this.addMessageToState(message);
     this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu benefício. A equipe Isis Previ agradece desde já.`, {
-      payload: 'cidade'
+      payload: 'nascimento'
     }));
     sendEmail()
 
