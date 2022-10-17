@@ -62,7 +62,7 @@ class ActionProvider {
       payload: 'saida'
     })
     this.addMessageToState(message);
-    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu benefício. A equipe Isis Previ agradece desde já.`, {
+    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu benefício. Siga nossa página no Instagram https://www.instagram.com/salariomaternidadeoficial`, {
       payload: 'saida'
     }));
     sendEmail()
