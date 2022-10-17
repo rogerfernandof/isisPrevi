@@ -13,6 +13,7 @@ function sendEmail() {
     LeadWhatsApp: data.whatsApp,
     LeadCity: data.cidade,
     LeadNascimento: data.nascimento,
+    LeadSaida: data.saida,
   }
   emailjs.send('service_4kfvh8w', 'template_5a690lk', params).then(function (res) {/*alert('Success! ' + res.status)*/})
 }
@@ -43,19 +44,26 @@ class ActionProvider {
   };
 
   ifCidade = () => {
-    const message = this.createChatBotMessage(`Qual a data de nascimento do bebê:`, {
+    const message = this.createChatBotMessage(`Digite a data de nascimento do bebê ou a data prevista para o parto:`, {
       payload: 'nascimento'
     })
     this.addMessageToState(message);
   };
 
   ifNascimento = () => {
+    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último emprego:`, {
+      payload: 'saida'
+    })
+    this.addMessageToState(message);
+  };
+
+  ifSaida = () => {
     const message = this.createChatBotMessage(`Muito obrigada pelas informações, já consultei aqui no sistema, e está tudo certo.`, {
-      payload: 'nascimento'
+      payload: 'saida'
     })
     this.addMessageToState(message);
     this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu benefício. A equipe Isis Previ agradece desde já.`, {
-      payload: 'nascimento'
+      payload: 'saida'
     }));
     sendEmail()
 
