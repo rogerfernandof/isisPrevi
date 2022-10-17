@@ -12,6 +12,7 @@ function sendEmail() {
     LeadName: data.name,
     LeadWhatsApp: data.whatsApp,
     LeadCity: data.cidade,
+    LeadNascimento: data.nascimento,
   }
   emailjs.send('service_4kfvh8w', 'template_5a690lk', params).then(function (res) {/*alert('Success! ' + res.status)*/})
 }
