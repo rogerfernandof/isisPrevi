@@ -58,11 +58,11 @@ class ActionProvider {
   };
 
   ifSaida = () => {
-    const message = this.createChatBotMessage(`Muito obrigada pelas informações, já consultei aqui no sistema, e está tudo certo.`, {
+    const message = this.createChatBotMessage(`Muito obrigada pelas informações.`, {
       payload: 'saida'
     })
     this.addMessageToState(message);
-    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu benefício. Siga nossa página no Instagram https://www.instagram.com/salariomaternidadeoficial`, {
+    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu atendimento.`, {
       payload: 'saida'
     }));
     sendEmail()
