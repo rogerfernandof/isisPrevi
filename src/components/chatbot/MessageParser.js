@@ -52,7 +52,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'saida'
       ) {
-        data.nascimento = { message }.message
+        data.saida = { message }.message
         this.actionProvider.ifSaida()
       }
     } else {
