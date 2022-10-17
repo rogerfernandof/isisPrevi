@@ -35,13 +35,20 @@ class ActionProvider {
   };
 
   ifWhatsApp = () => {
-    const message = this.createChatBotMessage(`Estamos quase terminando, em qual cidade você mora?`, {
+    const message = this.createChatBotMessage(`Em qual cidade você mora?`, {
       payload: 'cidade'
     })
     this.addMessageToState(message);
   };
 
   ifCidade = () => {
+    const message = this.createChatBotMessage(`Digite a data de nascimento do seu bebê`, {
+      payload: 'nascimento'
+    })
+    this.addMessageToState(message);
+  };
+
+  ifNascimento = () => {
     const message = this.createChatBotMessage(`Muito obrigada pelas informações, já consultei aqui no sistema, e está tudo certo.`, {
       payload: 'cidade'
     })
