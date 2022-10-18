@@ -57,7 +57,7 @@ class ActionProvider {
   };
 
   ifRamo = () => {
-    const message = this.createChatBotMessage(`Digite agora a data de nascimento do bebê ou a data prevista para o parto, caso o bebê ainda não tenha nascido:`, {
+    const message = this.createChatBotMessage(`Digite a data de nascimento do bebê ou a data prevista para o parto, caso o bebê ainda não tenha nascido:`, {
       payload: 'nascimento'
     })
     this.addMessageToState(message);
