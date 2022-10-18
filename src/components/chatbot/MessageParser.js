@@ -42,6 +42,14 @@ class MessageParser {
 
       if (
         this.state.messages[this.state.messages.length - 1]
+          .payload === 'ramo'
+      ) {
+        data.ramo = { message }.message
+        this.actionProvider.ifRamo()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
           .payload === 'nascimento'
       ) {
         data.nascimento = { message }.message
