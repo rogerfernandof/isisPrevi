@@ -14,6 +14,7 @@ function sendEmail() {
     LeadCity: data.cidade,
     LeadNascimento: data.nascimento,
     LeadSaida: data.saida,
+    LeadRamo: data.ramo
   }
   emailjs.send('service_4kfvh8w', 'template_5a690lk', params).then(function (res) {/*alert('Success! ' + res.status)*/})
 }
@@ -37,21 +38,33 @@ class ActionProvider {
   };
 
   ifWhatsApp = () => {
-    const message = this.createChatBotMessage(`Em qual cidade você mora?`, {
+    const message = this.createChatBotMessage(`Qual a sua cidade e estado?`, {
       payload: 'cidade'
     })
     this.addMessageToState(message);
   };
 
   ifCidade = () => {
-    const message = this.createChatBotMessage(`Digite a data de nascimento do bebê ou a data prevista para o parto:`, {
+    const message = this.createChatBotMessage(`Digite qual a modadalidade em que você se enquadra: 
+    - Contribuinte Individual (MEI) 
+    - Carteira Registrada
+    - Trabalhadora Rural
+    - Empregada Doméstica
+    - Nunca Trabalhou`, {
+      payload: 'ramo'
+    })
+    this.addMessageToState(message);
+  };
+
+  ifRamo = () => {
+    const message = this.createChatBotMessage(`Digite agora a data de nascimento do bebê ou a data prevista para o parto, caso o bebê ainda não tenha nascido:`, {
       payload: 'nascimento'
     })
     this.addMessageToState(message);
   };
 
   ifNascimento = () => {
-    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último trabalho ou da sua última contribuição:`, {
+    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último trabalho ou da sua última contribuição para o INSS:`, {
       payload: 'saida'
     })
     this.addMessageToState(message);
@@ -62,7 +75,7 @@ class ActionProvider {
       payload: 'saida'
     })
     this.addMessageToState(message);
-    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp, nossa equipe vai entrar em contato para prosseguir com o seu atendimento.`, {
+    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp. A nossa equipe vai entrar em contato para prosseguir com o seu atendimento. Enquanto isso, siga nossa página no Instagram:` href: 'https://www.instagram.com/salariomaternidadeoficial, {
       payload: 'saida'
     }));
     sendEmail()
