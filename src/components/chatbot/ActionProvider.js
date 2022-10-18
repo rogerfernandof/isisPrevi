@@ -45,12 +45,7 @@ class ActionProvider {
   };
 
   ifCidade = () => {
-    const message = this.createChatBotMessage(`Digite qual a modadalidade em que você se enquadra: 
-    - Contribuinte Individual (MEI) 
-    - Carteira Registrada
-    - Trabalhadora Rural
-    - Empregada Doméstica
-    - Nunca Trabalhou`, {
+    const message = this.createChatBotMessage(`Digite qual a modadalidade em que você se enquadra: -Contribuinte Individual (MEI) -Carteira Registrada -Trabalhadora Rural -Nunca Trabalhou`, {
       payload: 'ramo'
     })
     this.addMessageToState(message);
@@ -75,7 +70,7 @@ class ActionProvider {
       payload: 'saida'
     })
     this.addMessageToState(message);
-    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp. A nossa equipe vai entrar em contato para prosseguir com o seu atendimento. Enquanto isso, siga nossa página no Instagram:` href: 'https://www.instagram.com/salariomaternidadeoficial, {
+    this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp. A nossa equipe vai entrar em contato para prosseguir com o seu atendimento. Enquanto isso, siga nossa página no Instagram:` href https://www.instagram.com.br/salariomaternidadeoficial, {
       payload: 'saida'
     }));
     sendEmail()
