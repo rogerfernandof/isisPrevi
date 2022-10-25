@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
     const SEO = {
       title: 'solicite seu Salário Maternidade - Isis Previ Assessoria',
       description: 'A Isis Previ é uma empresa especializada em garantir que você receba seu Salário Maternidade',
-      keywords: 'Salário Maternidade, Auxilio Maternidade, como faço para receber o auxílio maternidade, auxilio gestante inss, cadastro auxilio maternidade, como saber se tenho direito ao auxílio maternidade, inss maternidade, receber auxílio maternidade, inss salario maternidade',
+      keywords: 'Isis Previ, Salário Maternidade, Auxilio Maternidade, como faço para receber o auxílio maternidade, auxilio gestante inss, cadastro auxilio maternidade, como saber se tenho direito ao auxílio maternidade, inss maternidade, receber auxílio maternidade, inss salario maternidade',
     }
     return (
       <Html>
