@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid'
+import { Checkbox } from '@chakra-ui/react'
 
 import {
   Box,
@@ -8,9 +9,12 @@ import {
   Flex,
   Button,
   Fade,
+  Grid,
 } from '@chakra-ui/react'
 
 import { QuestionList } from './QuestionList';
+import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 export function Hero() {
   const router = useRouter()
@@ -21,30 +25,59 @@ export function Hero() {
   const [error, setError] = useState(false)
   const [progress, setProgress] = useState(0)
   const [isDisplayed, setIsDisplayed] = useState(true)
+  const [checkBoxBlock, setCheckBoxBlock] = useState(false)
 
   const colorChange = value => {
     return value
   }
 
   async function handleCorrectAnswer(isCorrect) {
-    setIsDisplayed(false)
     setTimeout(async () => {
       await setIsDisplayed(true)
     }, 100)
     setError(false)
-    if (isCorrect) {
-      await setProgress(oldValue => oldValue + 1 + 35)
-      setScore(score + 1)
-      if (currentQuestion < QuestionList.length - 1) {
-        setCurrentQuestion(currentQuestion + 1)
-      } else {
-        router.push(BOT_URL)
-      }
+    if (checkBoxBlock && isCorrect) {
+      toast.info(
+        'Só é possível prosseguir caso você concorde com os termos.',
+        {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        },
+      )
+      setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, 425)
     } else {
-      setError(true)
-      setProgress(100)
+      if (isCorrect) {
+        await setProgress(oldValue => oldValue + 1 + 35)
+        setScore(score + 1)
+        if (currentQuestion < QuestionList.length - 1) {
+          setCurrentQuestion(currentQuestion + 1)
+        } else {
+          router.push(BOT_URL)
+        }
+      } else {
+        setError(true)
+        setProgress(100)
+        setCheckBoxBlock(false)
+      }
     }
   }
+
+  const handleChange = () => {
+    setCheckBoxBlock(current => !current);
+  };
+
+  useEffect(() => {
+    (currentQuestion === 1) && setCheckBoxBlock(true)
+  }, [currentQuestion])
+
   return (
     <Box
       bgImage="url('/images/Hero.jpg')"
@@ -75,7 +108,33 @@ export function Hero() {
           {isDisplayed ? (
             <>
               <Fade in={isDisplayed}>
-                <Box>
+                <Grid justifyItems='center'>
+                  { (currentQuestion === 1) && (
+                    <Flex
+                    justify='center'
+                    gap={15}
+                    background='white'
+                    p={15}
+                    w='fit-content'
+                    border='2px solid #0e6188'
+                    mx='35px'
+                    mb='70px'
+                    >
+                      <Link href='/terms'>
+                        <a>
+                        <Text
+                          fontSize={20}
+                          color='#0e6188'
+                          _hover={{textDecoration: 'underline'}}
+                        >
+                          Concordo com os termos do contrato
+                        </Text>
+                        </a>
+                      </Link>
+
+                    <Checkbox colorScheme='blue' value={checkBoxBlock as any} onChange={handleChange} type="checkbox"  /></Flex>
+                  )
+                  }
                   <Text
                     as="h4"
                     p="9px"
@@ -202,7 +261,7 @@ export function Hero() {
                       </Box>
                     </Box>
                   </Box>
-                </Box>
+                </Grid>
               </Fade>
             </>
           ): null}
