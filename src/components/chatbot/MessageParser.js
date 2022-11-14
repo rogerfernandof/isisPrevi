@@ -63,6 +63,63 @@ class MessageParser {
         data.saida = { message }.message
         this.actionProvider.ifSaida()
       }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'motivo'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifMotivo()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'seguro'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifSeguro()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'avo'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifAvo()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'nascimentomae'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifNascimentomae()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'cpf'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifCpf()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'rg'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifRg()
+      }
+
+      if (
+        this.state.messages[this.state.messages.length - 1]
+          .payload === 'rua'
+      ) {
+        data.saida = { message }.message
+        this.actionProvider.ifRua()
+      }
+      
     } else {
       alert('Digite uma mensagem correta')
     }

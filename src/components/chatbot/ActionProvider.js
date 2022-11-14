@@ -12,9 +12,16 @@ function sendEmail() {
     LeadName: data.name,
     LeadWhatsApp: data.whatsApp,
     LeadCity: data.cidade,
+    LeadRamo: data.ramo,
     LeadNascimento: data.nascimento,
     LeadSaida: data.saida,
-    LeadRamo: data.ramo
+    LeadMotivo: data.motivo,
+    LeadSeguro: data.seguro,
+    LeadAvo: data.avo,
+    LeadNascimentomae: data.nascimentomae,
+    LeadCpf: data.cpf,
+    LeadRg: data.rg,
+    LeadRua: data.rua
   }
   emailjs.send('service_4kfvh8w', 'template_5a690lk', params).then(function (res) {/*alert('Success! ' + res.status)*/})
 }
@@ -63,19 +70,68 @@ class ActionProvider {
   };
 
   ifNascimento = () => {
-    const message = this.createChatBotMessage(`Certo, estamos quase acabando. Digite agora a data de saída do seu último trabalho ou da sua última contribuição para o INSS:`, {
+    const message = this.createChatBotMessage(`Digite agora a data de saída do seu último trabalho ou da sua última contribuição para o INSS:`, {
       payload: 'saida'
     })
     this.addMessageToState(message);
   };
 
   ifSaida = () => {
+    const message = this.createChatBotMessage(`Em caso de contribuinte, digite foi o motivo da saída do emprego:`, {
+      payload: 'motivo'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifMotivo = () => {
+    const message = this.createChatBotMessage(`Você recebeu o seguro desemprego quando saiu do trabalho, como contribuinte?`, {
+      payload: 'seguro'
+    })
+    this.addMessageToState(message);
+  };
+
+  ifSeguro = () => {
+    const message = this.createChatBotMessage(`Qual o nome completo da avó materna da criança?`, {
+      payload: 'avo'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifAvo = () => {
+    const message = this.createChatBotMessage(`Digite agora a sua data de nascimento. Dia, Mês e Ano:`, {
+      payload: 'nascimentomae'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifNascimentomae = () => {
+    const message = this.createChatBotMessage(`Estamos quase terminando. Digite o seu CPF, por gentileza.`, {
+      payload: 'cpf'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifCpf = () => {
+    const message = this.createChatBotMessage(`Agora digite o seu número de RG:`, {
+      payload: 'rg'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifRg = () => {
+    const message = this.createChatBotMessage(`Para finalizar, digite o nome da sua Rua e o número da sua residência:`, {
+      payload: 'rua'
+    })
+    this.addMessageToState(message);
+  };
+  
+  ifRua = () => {
     const message = this.createChatBotMessage(`Muito obrigada pelas informações.`, {
-      payload: 'saida'
+      payload: 'rua'
     })
     this.addMessageToState(message);
     this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp. A nossa equipe de profissionais irá entrar em contato para prosseguir com o seu atendimento. `, {
-      payload: 'saida'
+      payload: 'rua'
     }));
     sendEmail()
 
