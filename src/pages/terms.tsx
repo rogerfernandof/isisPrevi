@@ -1,7 +1,12 @@
-import { Link, Text } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
+import Link from 'next/link'
+import { useEffect } from 'react'
 import { Layout } from '../components/Layout'
 
 export default function Terms() {
+  useEffect(() => {
+    localStorage.setItem('Continue', JSON.stringify(false));
+  },[])
   return (
     <Layout>
       <main
@@ -145,10 +150,12 @@ export default function Terms() {
         </ol>
 
         <Link href="/"  style={{width: 'fit-content'}}>
-            <Text color='blue' mt='75px'>
-              DECLARO QUE LI E ACEITO TODOS OS TERMOS DO
-              CONTRATO AO PROSSEGUIR
-            </Text>
+            <a>
+              <Text color='blue' mt='75px'>
+                DECLARO QUE LI E ACEITO TODOS OS TERMOS DO
+                CONTRATO AO PROSSEGUIR
+              </Text>
+            </a>
         </Link>
       </main>
     </Layout>

@@ -74,9 +74,21 @@ export function Hero() {
     setCheckBoxBlock(current => !current);
   };
 
+  function handleLocalStorage() {
+    localStorage.setItem('Continue', JSON.stringify(true));
+  }
+
   useEffect(() => {
-    (currentQuestion === 1) && setCheckBoxBlock(true)
+    if (currentQuestion === 1) setCheckBoxBlock(true)
   }, [currentQuestion])
+
+  useEffect(() => {
+    const Continue = localStorage.getItem('Continue');
+    localStorage.removeItem('Continue');
+
+    if (Continue) setCurrentQuestion(1)
+    if (currentQuestion === 1)  localStorage.setItem('Continue', JSON.stringify(false));
+  },[])
 
   return (
     <Box
@@ -126,6 +138,7 @@ export function Hero() {
                           fontSize={20}
                           color='#0e6188'
                           _hover={{textDecoration: 'underline'}}
+                          onClick={()=>handleLocalStorage()}
                         >
                           Concordo com os termos do contrato
                         </Text>
