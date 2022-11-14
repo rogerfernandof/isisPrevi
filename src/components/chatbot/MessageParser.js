@@ -1,7 +1,4 @@
-export let data = {
-  name: '',
-  whatsApp: '',
-}
+export let data = {}
 
 class MessageParser {
   constructor(actionProvider, state) {
@@ -68,7 +65,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'motivo'
       ) {
-        data.saida = { message }.message
+        data.motivo = { message }.message
         this.actionProvider.ifMotivo()
       }
 
@@ -76,7 +73,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'seguro'
       ) {
-        data.saida = { message }.message
+        data.seguro = { message }.message
         this.actionProvider.ifSeguro()
       }
 
@@ -84,7 +81,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'avo'
       ) {
-        data.saida = { message }.message
+        data.avo = { message }.message
         this.actionProvider.ifAvo()
       }
 
@@ -92,7 +89,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'nascimentomae'
       ) {
-        data.saida = { message }.message
+        data.nascimentomae = { message }.message
         this.actionProvider.ifNascimentomae()
       }
 
@@ -100,7 +97,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'cpf'
       ) {
-        data.saida = { message }.message
+        data.cpf = { message }.message
         this.actionProvider.ifCpf()
       }
 
@@ -108,7 +105,7 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'rg'
       ) {
-        data.saida = { message }.message
+        data.rg = { message }.message
         this.actionProvider.ifRg()
       }
 
@@ -116,10 +113,10 @@ class MessageParser {
         this.state.messages[this.state.messages.length - 1]
           .payload === 'rua'
       ) {
-        data.saida = { message }.message
+        data.rua = { message }.message
         this.actionProvider.ifRua()
       }
-      
+
     } else {
       alert('Digite uma mensagem correta')
     }
