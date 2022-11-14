@@ -127,11 +127,11 @@ class ActionProvider {
   
   ifRua = () => {
     const message = this.createChatBotMessage(`Muito obrigada pelas informações.`, {
-      payload: 'rua'
+      payload: 'saida'
     })
     this.addMessageToState(message);
     this.addMessageToState(this.createChatBotMessage(`Fique atenta ao seu Whatsapp. A nossa equipe de profissionais irá entrar em contato para prosseguir com o seu atendimento. `, {
-      payload: 'rua'
+      payload: 'saida'
     }));
     sendEmail()
 
