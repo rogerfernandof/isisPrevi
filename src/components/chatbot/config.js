@@ -7,7 +7,7 @@ const config = {
   botName: botName,
   initialMessages: [
     createChatBotMessage(`Olá, meu nome é Sarah, sou consultora virtual da Isis Previ. Podemos ajudar você a receber o Auxílio Maternidade.`),
-    createChatBotMessage(`Em 3 minutos já vamos iniciar o processo do seu benefício, com agilidade e segurança. Tenha mãos o seu CPF e RG.Vamos começar!`, {
+    createChatBotMessage(`Em 3 minutos já vamos iniciar o processo do seu benefício, com agilidade e segurança. Tenha em mãos o seu CPF e RG!`, {
       delay: 800,
     }),
     createChatBotMessage(`Qual o seu nome completo?`, {
