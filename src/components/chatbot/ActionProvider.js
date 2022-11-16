@@ -77,7 +77,7 @@ class ActionProvider {
   };
 
   ifSaida = () => {
-    const message = this.createChatBotMessage(`Em caso de contribuinte, digite o motivo da saída do emprego:`, {
+    const message = this.createChatBotMessage(`Se estava de carteira assinada, qual o motivo da sua saída do trabalho? Pediu a conta: digite 1.  Mandado embora: digite 2. Justa causa: digite 3`, {
       payload: 'motivo'
     })
     this.addMessageToState(message);
