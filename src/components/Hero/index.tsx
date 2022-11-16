@@ -79,15 +79,15 @@ export function Hero() {
   }
 
   useEffect(() => {
-    if (currentQuestion === 1) setCheckBoxBlock(true)
+    if (currentQuestion === 2) setCheckBoxBlock(true)
   }, [currentQuestion])
 
   useEffect(() => {
     const Continue = localStorage.getItem('Continue');
     localStorage.removeItem('Continue');
 
-    if (Continue) setCurrentQuestion(1)
-    if (currentQuestion === 1)  localStorage.setItem('Continue', JSON.stringify(false));
+    if (Continue) setCurrentQuestion(2)
+    if (currentQuestion === 2)  localStorage.setItem('Continue', JSON.stringify(false));
   },[])
 
   return (
@@ -121,7 +121,7 @@ export function Hero() {
             <>
               <Fade in={isDisplayed}>
                 <Grid justifyItems='center'>
-                  { (currentQuestion === 1) && (
+                  { (currentQuestion === 2) && (
                     <Flex
                     justify='center'
                     gap={15}
