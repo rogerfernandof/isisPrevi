@@ -27,12 +27,6 @@ export default function Chat() {
     })
   }, [])
 
-  if (typeof window !== "undefined") {
-    setInterval(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-    }, 1000);
-  }
-
   return (
     <>
       <Flex
