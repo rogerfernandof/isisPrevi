@@ -140,7 +140,7 @@ export function Hero() {
                           _hover={{textDecoration: 'underline'}}
                           onClick={()=>handleLocalStorage()}
                         >
-                          Concordo com os termos do contrato
+                          Concordo com os termos
                         </Text>
                         </a>
                       </Link>

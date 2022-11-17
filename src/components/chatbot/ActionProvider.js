@@ -52,11 +52,11 @@ class ActionProvider {
   };
 
   ifCidade = () => {
-    const message = this.createChatBotMessage(`Digite qual a modadalidade em que você se enquadra: 
-    -Contribuinte Individual (MEI) 
-    -Carteira Registrada 
-    -Trabalhadora Rural 
-    -Nunca Trabalhou`, {
+    const message = this.createChatBotMessage(`Digite o número correspondente à modalidade que você se enquadra: 
+    1.Contribuinte Individual (MEI)! 
+    2.Carteira Registrada!
+    3.Trabalhadora Rural! 
+    4.Nunca Trabalhou!`, {
       payload: 'ramo'
     })
     this.addMessageToState(message);
@@ -77,7 +77,7 @@ class ActionProvider {
   };
 
   ifSaida = () => {
-    const message = this.createChatBotMessage(`Se estava de carteira assinada, qual o motivo da sua saída do trabalho? Pediu a conta: digite 1.  Mandado embora: digite 2. Justa causa: digite 3`, {
+    const message = this.createChatBotMessage(`Se estava de carteira assinada, qual foi o motivo da sua saída do trabalho? Digite o número correspondente: 1.Pediu a conta! 2.Mandada embora! 3.Justa causa!`, {
       payload: 'motivo'
     })
     this.addMessageToState(message);
