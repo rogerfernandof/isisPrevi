@@ -53,10 +53,7 @@ class ActionProvider {
 
   ifCidade = () => {
     const message = this.createChatBotMessage(`Digite o número correspondente à modalidade que você se enquadra: 
-    1.Contribuinte Individual (MEI)! 
-    2.Carteira Registrada!
-    3.Trabalhadora Rural! 
-    4.Nunca Trabalhou!`, {
+    1.Contribuinte Individual (MEI)!                         2.Carteira Registrada!                  3.Trabalhadora Rural!              4.Nunca Trabalhou!`, {
       payload: 'ramo'
     })
     this.addMessageToState(message);
