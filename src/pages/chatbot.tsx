@@ -16,15 +16,19 @@ import Link from 'next/link'
 
 export default function Chat() {
   useEffect(() => {
-    var button = document.querySelector('button')
-    button.addEventListener('click', function() {
+    const interval = setInterval(() => {
       window?.scrollTo(
         0,
         document.querySelector(
           '.react-chatbot-kit-chat-message-container',
         )?.scrollHeight,
       )
-    })
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight)
   }, [])
 
   return (
