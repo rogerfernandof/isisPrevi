@@ -18,7 +18,7 @@ export default function Home() {
         right={5}
         zIndex={9999999}
       >
-        <Link href="https://wa.me/message/JK2WFCPMAAEEB1">
+        <Link href="https://api.whatsapp.com/send?phone=5561996203133&text=Quero%20tirar%20minhas%20duvidas!">
           <a>
             <Image
               src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/logo-whatsapp-png-transparent-background-8.png"
